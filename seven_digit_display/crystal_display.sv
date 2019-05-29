@@ -22,7 +22,7 @@ module crystal_display(
     input logic [6:0] lines,
     input logic [31:0] x,
     input logic [31:0] y,
-    input logic v
+    output logic v
     );
     
     logic [6:0] rectangle_vs;
@@ -73,7 +73,7 @@ module digit_display(
     input logic [3:0] digit,    // the current digit to show
     input logic [31:0] x,       // VGA current x
     input logic [31:0] y,       // VGA current y
-    input logic v               // should output? (OR this to VGA output)
+    output logic v               // should output? (OR this to VGA output)
     );
     
     logic [6:0] lines;
@@ -98,3 +98,4 @@ module digit_display(
         s_x, s_y, len, border,
         lines, x, y, v);
 endmodule
+
